@@ -1,10 +1,36 @@
 .app-shell {
+  --app-bg: #f8fafc;
+  --panel-bg: #ffffff;
+  --text: #111827;
+  --muted-text: #6b7280;
+  --border: #e5e7eb;
+  --control-border: #d1d5db;
+  --control-bg: #ffffff;
+  --button-bg: #f9fafb;
+  --danger: #b91c1c;
+
+  color: var(--text);
+  background: var(--app-bg);
   display: grid;
   grid-template-columns: 1fr;
   gap: 1rem;
   width: min(100%, 980px);
   margin: 0 auto;
   padding: 1rem;
+}
+
+@media (prefers-color-scheme: dark) {
+  .app-shell {
+    --app-bg: #0b1220;
+    --panel-bg: #111827;
+    --text: #e5e7eb;
+    --muted-text: #9ca3af;
+    --border: #334155;
+    --control-border: #475569;
+    --control-bg: #0f172a;
+    --button-bg: #1e293b;
+    --danger: #fca5a5;
+  }
 }
 
 .top-bar {
@@ -18,7 +44,7 @@
 
 .top-bar p {
   margin-top: 0.35rem;
-  color: #6b7280;
+  color: var(--muted-text);
 }
 
 .tabs {
@@ -27,9 +53,9 @@
 }
 
 .tabs button {
-  border: 1px solid #d1d5db;
-  background: #fff;
-  color: #111827;
+  border: 1px solid var(--control-border);
+  background: var(--control-bg);
+  color: var(--text);
   padding: 0.5rem 0.85rem;
   border-radius: 0.5rem;
   cursor: pointer;
@@ -42,7 +68,7 @@
 }
 
 .map-panel {
-  border: 1px solid #e5e7eb;
+  border: 1px solid var(--border);
   border-radius: 0.75rem;
   overflow: hidden;
 }
@@ -54,10 +80,10 @@
 
 .panel {
   text-align: left;
-  border: 1px solid #e5e7eb;
+  border: 1px solid var(--border);
   border-radius: 0.75rem;
   padding: 1rem;
-  background: #fff;
+  background: var(--panel-bg);
 }
 
 .row {
@@ -69,9 +95,11 @@
 }
 
 .row select {
-  border: 1px solid #d1d5db;
+  border: 1px solid var(--control-border);
   border-radius: 0.5rem;
   padding: 0.45rem 0.6rem;
+  background: var(--control-bg);
+  color: var(--text);
 }
 
 .stats-grid {
@@ -82,7 +110,7 @@
 }
 
 .stats-grid article {
-  border: 1px solid #e5e7eb;
+  border: 1px solid var(--border);
   border-radius: 0.5rem;
   padding: 0.75rem;
 }
@@ -90,7 +118,7 @@
 .stats-grid h3 {
   margin: 0 0 0.35rem;
   font-size: 0.85rem;
-  color: #6b7280;
+  color: var(--muted-text);
   font-weight: 600;
 }
 
@@ -105,9 +133,9 @@
 }
 
 .actions button {
-  border: 1px solid #d1d5db;
-  background: #f9fafb;
-  color: #111827;
+  border: 1px solid var(--control-border);
+  background: var(--button-bg);
+  color: var(--text);
   padding: 0.45rem 0.7rem;
   border-radius: 0.5rem;
   cursor: pointer;
@@ -120,7 +148,7 @@
 
 .error {
   margin-top: 0.75rem;
-  color: #b91c1c;
+  color: var(--danger);
 }
 
 .history-list {
@@ -135,7 +163,7 @@
   display: flex;
   justify-content: space-between;
   gap: 1rem;
-  border: 1px solid #e5e7eb;
+  border: 1px solid var(--border);
   border-radius: 0.5rem;
   padding: 0.7rem;
 }
